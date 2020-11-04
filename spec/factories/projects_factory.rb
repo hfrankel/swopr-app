@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :project do
-    title { "MyString" }
-    description { "MyText" }
-    user { nil }
+    title { "My Project" }
+    description { "This is a description for my project" }
+    user
   end
 end
