@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe ProjectCollaborator, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { build(:project_collaborator) }
+  context 'Associations' do
+    it { is_expected.to belong_to(:user) }
+    it { is_expected.to belong_to(:project) }
+  end
 end
