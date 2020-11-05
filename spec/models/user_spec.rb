@@ -12,5 +12,6 @@ RSpec.describe User, type: :model do
   end
   context 'Associations' do
     it { is_expected.to have_many(:projects) }
+    it { is_expected.to have_many(:projects).through(:project_collaborators) }
   end
 end
