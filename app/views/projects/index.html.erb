@@ -1,0 +1,21 @@
+<h1>Projects</h1>
+
+<%= link_to "New Project", new_project_path %>
+
+<div>
+  <% @projects.each do |project| %>
+  <ul>
+    <li>
+      <%= link_to "Title: #{project.title}", project_path(project) %>
+    </li>
+    <li>
+      Description:
+      <%= project.description %>
+    </li>
+    <li>
+      Creator:
+      <%= project.user.given_names + ' ' + project.user.last_name %>
+    </li>
+  </ul>
+  <% end %>
+</div>
