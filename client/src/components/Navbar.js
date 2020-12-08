@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
@@ -66,10 +67,12 @@ const Navbar = () => {
         >
           <List>
             {drawerItems.map((prop) => (
-              <ListItem onClick={toggleDrawer} button key={prop.text}>
-                <ListItemIcon>{prop.icon}</ListItemIcon>
-                <ListItemText>{prop.text}</ListItemText>
-              </ListItem>
+              <RouterLink to={`/${prop.text.toLowerCase()}`}>
+                <ListItem onClick={toggleDrawer} button key={prop.text}>
+                  <ListItemIcon>{prop.icon}</ListItemIcon>
+                  <ListItemText>{prop.text}</ListItemText>
+                </ListItem>
+              </RouterLink>
             ))}
           </List>
         </Drawer>
